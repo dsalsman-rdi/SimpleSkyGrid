@@ -19,6 +19,7 @@ public class Mappings {
     //field names
     public static String fDimensionId;
     public static String fWorldObj;
+    public static String selectedIndex;
     static boolean uninitialized = true;
     
     public static void initialize(boolean isSrgNames) {
@@ -29,7 +30,7 @@ public class Mappings {
             mOnNeighborBlockChange = "func_149695_a";
             mUpdateTick            = "func_149674_a";
             mGetWorldInfo          = "func_72912_H";
-            
+            selectedIndex = "field_146331_K";
             fDimensionId = "field_76574_g";
             fWorldObj    = "field_76579_a";
         } else {
@@ -39,6 +40,7 @@ public class Mappings {
             mOnNeighborBlockChange = "onNeighborBlockChange";
             mUpdateTick            = "updateTick";
             mGetWorldInfo          = "getWorldInfo";
+            selectedIndex = "selectedIndex";
             
             fDimensionId = "dimensionId";
             fWorldObj    = "worldObj";

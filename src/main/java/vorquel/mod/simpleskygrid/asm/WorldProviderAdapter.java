@@ -32,6 +32,7 @@ public class WorldProviderAdapter extends ClassVisitor implements Opcodes{
 
         @Override
         public void visitCode() {
+        	System.out.println("visited code");
             mv.visitCode();
             mv.visitVarInsn(ALOAD, 0);
             mv.visitFieldInsn(GETFIELD, cWorldProvider, fWorldObj, "L" + cWorld + ";");
