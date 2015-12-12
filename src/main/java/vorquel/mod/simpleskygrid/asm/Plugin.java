@@ -1,16 +1,17 @@
 package vorquel.mod.simpleskygrid.asm;
 
-import cpw.mods.fml.relauncher.IFMLLoadingPlugin;
+import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
+import scala.Console;
+
 import org.apache.logging.log4j.LogManager;
 import vorquel.mod.simpleskygrid.helper.Log;
 import vorquel.mod.simpleskygrid.helper.Ref;
 
 import java.util.Map;
 
-@SuppressWarnings("unused")
 @IFMLLoadingPlugin.SortingIndex(1001)
 @IFMLLoadingPlugin.TransformerExclusions("vorquel.mod.simpleskygrid.asm.")
-@IFMLLoadingPlugin.MCVersion("1.7.10")
+@IFMLLoadingPlugin.MCVersion("1.8.8")
 public class Plugin implements IFMLLoadingPlugin {
 
     static {
@@ -36,6 +37,7 @@ public class Plugin implements IFMLLoadingPlugin {
     public void injectData(Map<String, Object> data) {
         boolean isSrgNames = (Boolean) data.get("runtimeDeobfuscationEnabled");
         Mappings.initialize(isSrgNames);
+        Console.out().println("isSrgNames: " + isSrgNames);
         Transformer.initialize(isSrgNames);
     }
 
